@@ -8,6 +8,7 @@ Screenshots cleaner
 Daniel Hjerppe - daniel.hjerppe@gmail.com
 
 WORK IN PROGRESS 2021-10-20
+Updated 2022-09-09
 
 Goes through your screenshots folder and organizes them based on name/year
 
@@ -20,7 +21,7 @@ BASE_PATH = os.path.expanduser("~")
 DESKTOP_PATH = os.path.join(BASE_PATH, "Desktop",)
 SCRNSHT_PATH = os.path.join(DESKTOP_PATH, "Screenshots")
 
-DEST_DIRS = ["2016", "2017", "2018", "2019", "2020", "2021", "2022"]
+DEST_DIRS = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
 
 
 def basic_debug():
@@ -108,6 +109,14 @@ def screenshots_move():
                 os.rename(os.path.join(SCRNSHT_PATH, i), os.path.join(SCRNSHT_PATH, "2020", i))
                 print("Year %s found" % year)
         elif year == "2021":
+            for i in ss:
+                os.rename(os.path.join(SCRNSHT_PATH, i), os.path.join(SCRNSHT_PATH, "2021", i))
+                print("Year %s found" % year)
+        elif year == "2022":
+            for i in ss:
+                os.rename(os.path.join(SCRNSHT_PATH, i), os.path.join(SCRNSHT_PATH, "2021", i))
+                print("Year %s found" % year)
+        elif year == "2023":
             for i in ss:
                 os.rename(os.path.join(SCRNSHT_PATH, i), os.path.join(SCRNSHT_PATH, "2021", i))
                 print("Year %s found" % year)
