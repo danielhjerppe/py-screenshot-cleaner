@@ -18,10 +18,11 @@ from pathlib import Path
 BASE_PATH = Path.home()
 DESKTOP_PATH = BASE_PATH.joinpath("Desktop")
 SCRNSHT_PATH = DESKTOP_PATH.joinpath("Screenshots")
+#DESKTOP_PATH = SCRNSHT_PATH
 
 print()
 print(f"Looking for screenshots in: {DESKTOP_PATH}")
-print(f"Moving found screenshots fo {SCRNSHT_PATH}/*year*/")
+print(f"Moving found screenshots to: {SCRNSHT_PATH}/*year*/")
 print()
 
 SCRNSHT_LIST = DESKTOP_PATH.iterdir()
@@ -33,13 +34,15 @@ for file in SCRNSHT_LIST:  # Go through files in list
     filetype = file.suffix
     if file.is_file() and filetype == ".png":  # Check that it's a png file
         screenshot = filename.split(" ")  # Split the name from whitespaces
-        print(filename)
+        #print(filename)
         if screenshot[0] == "Screenshot":  # Check if the name begins with "Screenshot"
             year = screenshot[1].split("-")  # Split the name from "-"
             year = year[0]
-        elif screenshot[0] == "Screen":
-            year = screenshot[2].split("-")  # Split the name from "-"
-            year = year[0]
+            print(f"{filename} Ehto 1 täytetty. Vuosi: {year}. Length is {len(year)} & {year.isnumeric()}")
+        # elif screenshot[0] == "Screen":
+        #     year = screenshot[2].split("-")  # Split the name from "-"
+        #     year = year[0]
+        #     print("Ehto 2 täytetty")
             if len(year) == 4 and year.isnumeric():
                 print(f"Yhteenkirjoitettu -- Vuosi: {year}")
                 filedict = {
