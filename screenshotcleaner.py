@@ -1,11 +1,9 @@
 """
 Screenshots cleaner v2 with pathlib
 
-Daniel Hjerppe - daniel.hjerppe@gmail.com
+2023-09-12
 
-WORK IN PROGRESS 2023-09-12
-
-Goes through your screenshots folder and organizes them based on name/year
+It scans your screenshots folder and arranges its contents by year.
 
 """
 
